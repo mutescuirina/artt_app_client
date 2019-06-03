@@ -1,11 +1,15 @@
-import React from 'react'
+import React, {Component} from 'react';
 
-class TBT extends React.Component {
-    render () {
+class TBT extends Component {
+    render() {
         return (
-            <div>This is the TBT Page</div>
-        )
+            <div className="card">
+                <p>{this.props.past.title}</p>
+                <p>{this.props.past.description}</p>
+                <p>{this.props.past.date}</p>
+            </div>
+        );
     }
 }
 
-export default TBT
+export default TBT;

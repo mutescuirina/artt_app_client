@@ -3,9 +3,12 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
+import 'materialize-css/dist/css/materialize.min.css'
 import App from './App'
-import Events from './components/Event'
-import News from './components/News' 
+import AllEvents from './components/AllEvents'
+import AllNews from './components/AllNews' 
+import AllTreasures from './components/AllTreasure'
+import AllTBT from './components/AllTBT'
 const routing = (
   <Router>
     <div>
@@ -19,11 +22,19 @@ const routing = (
         <li>
           <Link to="/news">News</Link>
         </li>
+        <li>
+          <Link to="/treasures">Treasures</Link>
+        </li>
+        <li>
+          <Link to="/tbt">TBT</Link>
+        </li>
 
       </ul>
       <Route exact path="/" component={App} />
-      <Route path="/events" component={Events} />
-      <Route path="/news" component={News} />
+      <Route path="/events" component={AllEvents} />
+      <Route path="/news" component={AllNews} />
+      <Route path="/treasures" component={AllTreasures} />
+      <Route path="/TBT" component={AllTBT} />
     </div>
   </Router>
 )

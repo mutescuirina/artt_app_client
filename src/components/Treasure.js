@@ -1,11 +1,16 @@
-import React from 'react'
 
-class Treasure extends React.Component {
-    render () {
+import React, {Component} from 'react';
+
+class Treasure extends Component {
+    render() {
         return (
-            <div>This is the Treasure Page</div>
-        )
+            <div className="card">
+                <p>{this.props.past.title}</p>
+                <p>{this.props.past.description}</p>
+                <p>{this.props.past.date}</p>
+            </div>
+        );
     }
 }
 
-export default Treasure
+export default Treasure;
