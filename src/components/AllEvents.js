@@ -11,6 +11,7 @@ class AllEvents extends React.Component {
         }
         this.handleAddEvent = this.handleAddEvent.bind(this)
         this.deleteEvent = this.deleteEvent.bind(this)
+        this.getFutures = this.getFutures.bind(this)
        
 
     }
@@ -32,8 +33,11 @@ class AllEvents extends React.Component {
     getFutures() {
         fetch('/futures')
             .then(response => response.json())
-            .then(json => this.setState({ futures: json }))
-            .catch(error => console.error(error))
+            .then(json => {
+                console.log(json)
+                this.setState({ futures: json })
+            })
+            // .catch(error => console.error(error))
 
     }
     handleAddEvent(event) {
