@@ -1,6 +1,7 @@
 import React from 'react'
 import Event from './Event'
 import EventForm from './EventForm'
+import { Modal, Button} from 'react-materialize';
 
 class AllEvents extends React.Component {
     constructor(props) {
@@ -10,22 +11,22 @@ class AllEvents extends React.Component {
         }
         this.handleAddEvent = this.handleAddEvent.bind(this)
         this.deleteEvent = this.deleteEvent.bind(this)
+       
 
     }
     componentDidMount() {
         this.getFutures()
     }
     deleteEvent(id) {
-        fetch('/futures' + id, {
+        fetch('/futures/' + id, {
             method: 'DELETE'
         })
             .then(response => {
-                const findIndex = this.state.futures.findIndex
-                    (event => event.id === id)
+                const findIndex = this.state.futures.findIndex(event => event.id === id)
                 const copyEvents = [... this.state.futures]
                 copyEvents.splice(findIndex, 1)
                 this.setState({ futures: copyEvents })
-                
+
             })
     }
     getFutures() {
@@ -45,17 +46,31 @@ class AllEvents extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className="container">
                 <h1>This is the Event Page</h1>
-                <EventForm handleAddEvent={this.handleAddEvent} />
+            <div className="row">
+            <Modal header="Modal Header" bottomSheet trigger={<Button
+  floating
+  large
+  className="button"
+  waves="light"
+  icon="add"
+/>}>
+            <EventForm handleAddEvent={this.handleAddEvent} />
+</Modal>
+                
                 {this.state.futures.map((future) =>
-                <div>
-                    <Event future={future} key={future.title} />
-                    <p onClick={() => this.deleteEvent(future.id)}>X</p>
-                    
-                </div>
-)}
+                    <div>
+                        <Event deleteEvent={this.deleteEvent} future={future} key={future.title} />
+                        
+                        {/* <span onClick={() => this.deleteEvent(future.id)}>X</span> */}
+                        
+                        
 
+                    </div>
+                )}
+
+</div>
             </div>
         )
     }

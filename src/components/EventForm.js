@@ -6,9 +6,7 @@ class EventForm extends React.Component {
         super (props)
         this.state = {
             title: '',
-            img: '',
             description: '',
-            comment: '',
             date: ''
 
         }
@@ -23,7 +21,7 @@ class EventForm extends React.Component {
         event.preventDefault()
         fetch('/futures', {
             method:'POST', 
-                body:JSON.stringify({ title: this.state.title, img: this.state.img, description:this.state.description, comment: this.state.comment, date:this.state.date}),
+                body:JSON.stringify({ title: this.state.title,  description:this.state.description, date:this.state.date, img:this.state.img}),
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -32,7 +30,7 @@ class EventForm extends React.Component {
         }).then(res => res.json())
             .then(resJSON => {
                 this.props.handleAddEvent(resJSON)
-                this.setState({title: '', img: '', description: '', comment: '', date: ''})
+                this.setState({title: '',description: '',date: '', img: ''})
             })
     }
     render () {
@@ -46,14 +44,6 @@ class EventForm extends React.Component {
             value={this.state.title}
             />
 
-            <label htmlFor="img">Image</label>
-            <input
-            type="text"
-            id="img"
-            onChange={this.handleChange}
-            value={this.state.img}
-            />
-
             <label htmlFor="description">Description</label>
             <input
             type="text"
@@ -62,13 +52,6 @@ class EventForm extends React.Component {
             value={this.state.description}
             />
 
-            <label htmlFor="comment">Comment</label>
-            <input
-            type="text"
-            id="comment"
-            onChange={this.handleChange}
-            value={this.state.comment}
-            />
 
             <label htmlFor="date">Date</label>
             <input
@@ -76,6 +59,13 @@ class EventForm extends React.Component {
             id="date"
             onChange={this.handleChange}
             value={this.state.date}
+            />
+            <label htmlFor="img">Img</label>
+            <input
+            type="media"
+            id="img"
+            onChange={this.handleChange}
+            value={this.state.img}
             />
             <input 
             type="submit"

@@ -1,17 +1,38 @@
-import React, {Component} from 'react';
+import React from 'react';
+import { Col, Card, CardTitle} from 'react-materialize';
+import  '../App.css';
 
-class Event extends Component {
+
+class Event extends React.Component {
     render() {
         return (
-            <div className="card">
-                <p>{this.props.future.title}</p>
-                <p>{this.props.future.description}</p>
-                <p>{this.props.future.img}</p>
-                <p>{this.props.future.comment}</p>
-                <p>{this.props.future.date}</p>
-            </div>
+            <Col m={4} s={12}>
+                <div>
+
+                    <Card classname="event-card"header={<CardTitle />}
+                     title={this.props.future.title}
+                         reveal={this.props.future.description}> 
+                             <div className="card-content">
+                             <img src={this.props.future.img}/>
+                            <span onClick={() => this.props.deleteEvent(this.props.future.id)}>X</span>
+                            
+                             </div>
+                             
+                        {/* <p>{this.props.future.title}</p>
+                        <p>{this.props.future.description}</p>
+                        <img src={this.props.future.img}/>
+                        <p>{this.props.future.comment}</p>
+                        <p>{this.props.future.date}</p> */}
+                    </Card>
+                </div>
+            </Col>
+
+
         );
+
     }
+
 }
+
 
 export default Event;

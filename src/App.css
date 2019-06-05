@@ -3,9 +3,49 @@
 }
 
 .card {
-  border: solid 2px black;
+  width: 300px;
+  height: 300px;
 }
 
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+img {
+  height: auto;
+  max-height: 250px;
+  width: auto;
+  max-width: 250px;
+  
+
+}
+.button {
+  color: blue;
+  /* float: right; */
+}
+.logo {
+  height: auto;
+  max-height: 75px;
+  width: auto;
+  max-width: 75px;
+}
+.navigation {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  background: none;
+  padding-top: 20px;
+ box-shadow:none; 
+
+  
+}
+.navigation a {
+  color: black;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
