@@ -30,7 +30,7 @@ class NewsForm extends React.Component {
             
         }).then(res => res.json())
             .then(resJSON => {
-                this.props.handleAddEvent(resJSON)
+                this.props.handleAddNews(resJSON)
                 this.setState({title: '', img: '', description: '', comment: ''})
             })
     }

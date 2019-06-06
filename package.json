@@ -1,5 +1,9 @@
 {
   "name": "artt_app_client",
+  "engines": {
+    "node": "10.11.0",
+    "npm": "6.4.1"
+  },
   "version": "0.1.0",
   "proxy": "http://localhost:3000",
   "private": true,

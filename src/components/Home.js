@@ -6,11 +6,11 @@ class Home extends React.Component {
         return (
             <div>This is the Home Page
             {/* <Carousel options={{fullWidth: true,indicators: true}} images={[
-                'https://picsum.photos/250/250?image=0',
-                'https://picsum.photos/250/250?image=1',
-                'https://picsum.photos/250/250?image=2',
+                'https://d1wwvmedxjfrrp.cloudfront.net/catalog/product/cache/c687aa7517cf01e65c009f6943c2b1e9/r/o/roses_scented_candle_ro1_1439x1200.png',
+                'https://d1wwvmedxjfrrp.cloudfront.net/catalog/product/cache/c687aa7517cf01e65c009f6943c2b1e9/r/o/roses_scented_candle_ro1_1439x1200.png',
+                'https://d1wwvmedxjfrrp.cloudfront.net/catalog/product/cache/c687aa7517cf01e65c009f6943c2b1e9/r/o/roses_scented_candle_ro1_1439x1200.png',
             
-              ]} /> */}
+              ]} />  */}
               </div>   
         )
         

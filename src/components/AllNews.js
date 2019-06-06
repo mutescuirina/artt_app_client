@@ -8,11 +8,12 @@ class AllNews extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            presents: [
-            ]
+            presents: [],
+            currentPresent: null
         }
         this.handleAddNews = this.handleAddNews.bind(this)
         this.deleteNews = this.deleteNews.bind(this)
+        this.setCurrent = this.setCurrent.bind(this)
     }
     componentDidMount() {
         this.getPresents()
@@ -33,6 +34,14 @@ class AllNews extends React.Component {
             .then(response => response.json())
             .then(json => this.setState({ presents: json }))
             .catch(error => console.error(error))
+    }
+    setCurrent(event) {
+        // console.log("HELP ME")
+        this.setState({
+            currentPresent: event.currentTarget.id
+        })
+        // console.log(event.currentTarget.id)
+
     }
     handleAddNews(news) {
         const copyNews = [...this.state.presents]
@@ -60,8 +69,9 @@ class AllNews extends React.Component {
 
                 {this.state.presents.map((present) =>
                     <div>
-                        <New present={present} key={present.title} />
+                        <New present={present} setCurrent={this.setCurrent} key={present.id} currentPresent={this.state.currentPresent} id={present.id} />
                         <p onClick={() => this.deleteNews(present.id)}>X</p>
+                        
                         
                     </div>
                 )}

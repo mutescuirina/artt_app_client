@@ -3,6 +3,18 @@ import Event from './Event'
 import EventForm from './EventForm'
 import { Modal, Button} from 'react-materialize';
 
+let baseURL = process.env.REACT_APP_BASEURL
+
+//alternate baseURL = 'https://fathomless-sierra-68956.herokuapp.com'
+
+if (process.env.NODE_ENV === 'development') {
+  baseURL = 'http://localhost:3001'
+} else {
+  baseURL = 'https://artt-app-api-final.herokuapp.com/'
+}
+
+console.log('current base URL:', baseURL)
+
 class AllEvents extends React.Component {
     constructor(props) {
         super(props)
@@ -19,7 +31,7 @@ class AllEvents extends React.Component {
         this.getFutures()
     }
     deleteEvent(id) {
-        fetch('/futures/' + id, {
+        fetch( baseURL + '/futures/' + id, {
             method: 'DELETE'
         })
             .then(response => {
@@ -51,7 +63,6 @@ class AllEvents extends React.Component {
     render() {
         return (
             <div className="container">
-                <h1>This is the Event Page</h1>
             <div className="row">
             <Modal header="Modal Header" bottomSheet trigger={<Button
   floating

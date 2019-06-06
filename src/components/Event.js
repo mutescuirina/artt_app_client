@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Card, CardTitle} from 'react-materialize';
+import { Col, Card, CardTitle, Checkbox} from 'react-materialize';
 import  '../App.css';
 
 
@@ -15,6 +15,8 @@ class Event extends React.Component {
                              <div className="card-content">
                              <img src={this.props.future.img}/>
                             <span onClick={() => this.props.deleteEvent(this.props.future.id)}>X</span>
+                            <Checkbox value="Red" label="Red" />
+
                             
                              </div>
                              
