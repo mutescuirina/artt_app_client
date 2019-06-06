@@ -7,7 +7,7 @@ let baseURL = process.env.REACT_APP_BASEURL
 
 
 if (process.env.NODE_ENV === 'development') {
-    baseURL = 'http://localhost:3001'
+    baseURL = 'http://localhost:3000'
   } else {
     baseURL = 'https://artt-app-api-final.herokuapp.com/'
   }
