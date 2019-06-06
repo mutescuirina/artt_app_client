@@ -1,23 +1,36 @@
 
-import React, {Component} from 'react';
-import { Col, Card, CardTitle} from 'react-materialize';
-import  '../App.css';
+import React, { Component } from 'react';
+import { Col, Card, CardTitle,Row } from 'react-materialize';
+import '../App.css';
 
 class Treasure extends Component {
     render() {
         return (
             <Col m={4} s={12}>
                 <div>
+                    <Row>
+                        <Col m={6} s={12}>
+                            <Card header={<CardTitle />} actions={[<a />]}
+                            title={this.props.past.title}
+                            >
+                                <div className="card-content">
+                                <div className="card-image">
+                                <img src={this.props.past.img}/>
+                                </div>
+                                <button>see more</button>
+                                </div>
+</Card>
+                        </Col>
+                    </Row>
+                    <Card classname="treasure-card" header={<CardTitle />}
+                        title={this.props.past.title}
+                        reveal={this.props.past.description}>
+                        <div className="card-content">
+                            <img src={this.props.past.img} />
+                            <span onClick={() => this.props.deleteTreasure(this.props.past.id)}>X</span>
 
-                    <Card classname="treasure-card"header={<CardTitle />}
-                     title={this.props.past.title}
-                         reveal={this.props.past.description}> 
-                             <div className="card-content">
-                             <img src={this.props.past.img}/>
-                            <span onClick={() => this.props.deleteEvent(this.props.past.id)}>X</span>
-                            
-                             </div>
-                             
+                        </div>
+
                         {/* <p>{this.props.future.title}</p>
                         <p>{this.props.future.description}</p>
                         <img src={this.props.future.img}/>

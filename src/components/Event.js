@@ -11,7 +11,12 @@ class Event extends React.Component {
 
                     <Card classname="event-card"header={<CardTitle />}
                      title={this.props.future.title}
-                         reveal={this.props.future.description}
+                         reveal={
+                         <div>
+                         <h3>{this.props.future.date}</h3>
+                         <p>{this.props.future.description}</p>
+                         </div>
+                        }
                          > 
                              <div className="card-content">
                              <img src={this.props.future.img}/>
