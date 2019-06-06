@@ -11,11 +11,12 @@ class Event extends React.Component {
 
                     <Card classname="event-card"header={<CardTitle />}
                      title={this.props.future.title}
-                         reveal={this.props.future.description}> 
+                         reveal={this.props.future.description}
+                         > 
                              <div className="card-content">
                              <img src={this.props.future.img}/>
                             <span onClick={() => this.props.deleteEvent(this.props.future.id)}>X</span>
-                            <Checkbox value="Red" label="Red" />
+                            
 
                             
                              </div>

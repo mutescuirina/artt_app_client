@@ -3,6 +3,15 @@ import New from './New'
 import NewsForm from './NewsFrom'
 import { Modal, Button } from 'react-materialize';
 
+let baseURL = process.env.REACT_APP_BASEURL
+
+if (process.env.NODE_ENV === 'development') {
+    baseURL = 'http://localhost:3001'
+  } else {
+    baseURL = 'https://artt-app-api-final.herokuapp.com/'
+  }
+  
+  console.log('current base URL:', baseURL)
 
 class AllNews extends React.Component {
     constructor(props) {
@@ -19,7 +28,7 @@ class AllNews extends React.Component {
         this.getPresents()
     }
     deleteNews(id) {
-        fetch('/presents' + id, {
+        fetch( baseURL + '/presents' + id, {
             method: 'DELETE'
         })
             .then(response => {
