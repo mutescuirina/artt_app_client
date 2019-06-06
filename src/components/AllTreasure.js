@@ -46,7 +46,7 @@ class AllTreasure extends React.Component {
             method: 'DELETE'
         })
             .then(response => {
-                const findIndex = this.state.futures.findIndex(event => event.id === id)
+                const findIndex = this.state.pasts.findIndex(event => event.id === id)
                 const copyTreasures = [... this.state.pasts]
                 copyTreasures.splice(findIndex, 1)
                 this.setState({ pasts: copyTreasures })
