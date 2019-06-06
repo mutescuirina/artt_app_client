@@ -8,7 +8,7 @@ let baseURL = process.env.REACT_APP_BASEURL
 //alternate baseURL = 'https://fathomless-sierra-68956.herokuapp.com'
 
 if (process.env.NODE_ENV === 'development') {
-  baseURL = 'http://localhost:3001'
+  baseURL = 'http://localhost:3000'
 } else {
   baseURL = 'https://artt-app-api-final.herokuapp.com/'
 }
@@ -31,7 +31,7 @@ class AllEvents extends React.Component {
         this.getFutures()
     }
     deleteEvent(id) {
-        fetch( baseURL + '/futures/' + id, {
+        fetch('/futures/' + id, {
             method: 'DELETE'
         })
             .then(response => {
@@ -43,7 +43,7 @@ class AllEvents extends React.Component {
             })
     }
     getFutures() {
-        fetch('/futures')
+        fetch(  baseURL + '/futures')
             .then(response => response.json())
             .then(json => {
                 console.log(json)

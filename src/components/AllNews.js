@@ -28,7 +28,7 @@ class AllNews extends React.Component {
         this.getPresents()
     }
     deleteNews(id) {
-        fetch( baseURL + '/presents' + id, {
+        fetch('/presents' + id, {
             method: 'DELETE'
         })
             .then(response => {
@@ -39,7 +39,7 @@ class AllNews extends React.Component {
             })
     }
     getPresents() {
-        fetch('/presents')
+        fetch( baseURL + '/presents')
             .then(response => response.json())
             .then(json => this.setState({ presents: json }))
             .catch(error => console.error(error))
