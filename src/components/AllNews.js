@@ -41,7 +41,10 @@ class AllNews extends React.Component {
     getPresents() {
         fetch( baseURL + '/presents')
             .then(response => response.json())
-            .then(json => this.setState({ presents: json }))
+            .then(json => {
+                console.log(json)
+                this.setState({ presents: json })
+            })
             .catch(error => console.error(error))
     }
     setCurrent(event) {
