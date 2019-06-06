@@ -31,7 +31,7 @@ class AllEvents extends React.Component {
         this.getFutures()
     }
     deleteEvent(id) {
-        fetch('/futures/' + id, {
+        fetch( baseURL + '/futures/' + id, {
             method: 'DELETE'
         })
             .then(response => {

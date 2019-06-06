@@ -28,7 +28,7 @@ class AllNews extends React.Component {
         this.getPresents()
     }
     deleteNews(id) {
-        fetch('/presents' + id, {
+        fetch( baseURL + '/presents' + id, {
             method: 'DELETE'
         })
             .then(response => {
