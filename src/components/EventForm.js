@@ -35,7 +35,8 @@ class EventForm extends React.Component {
     }
     render () {
         return (
-            <form onSubmit={this.handleSubmit}>
+            <div className="row">
+            <form className=" col 12" onSubmit={this.handleSubmit}>
             <label htmlFor="title">Title</label>
             <input
             type="text"
@@ -74,6 +75,7 @@ class EventForm extends React.Component {
 
 
             </form>
+            </div>
 
         )
     }

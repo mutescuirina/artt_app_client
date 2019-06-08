@@ -1,11 +1,55 @@
+
+body, html {
+  margin:0;
+}
+
 .App {
   text-align: center;
+  
+}
+#modal-0 {
+  /* display: flex; */
+    margin: 0px 291px;
+    margin-bottom: 150px;
+    /* align-self: center; */
+    width: 60%;
+    /* justify-items: center; */
+    /* align-items: center; */
+    /* justify-self: center;
+    align-content: center; */
+    opacity: 1;
+    /* bottom: 0px; */
+}
+.titles {
+  color: #ffffff;
+  text-align: center;
+}
+.row {
+  padding: 30px;
+}
+.btn-floating .right .button {
+  padding:10px;
+}
+.container {
+  background: #B36528;
+}
+.btn-floating i {
+  background:#ffffff;
+  color: #8FD4F3; 
+ 
+}
+.btn-small i{
+  background: white;
+  color: #8FD4F3;
+
 }
 
 .card {
+  display: flex;
   width: 300px;
   height: 300px;
 }
+
 .card-small {
   width: 100px;
   height: 100px;
@@ -21,14 +65,21 @@
 
 img {
   height: auto;
-  max-height: 250px;
+  max-height: 200px;
   width: auto;
-  max-width: 250px;
+  max-width: 200px;
   
 
 }
+.form {
+ padding: 50px;
+}
+input[type=text]:not(.browser-default) {
+  height: 2rem;
+}
+
 .button {
-  color: blue;
+  color:#62C4EF;
   /* float: right; */
 }
 .logo {
@@ -37,6 +88,7 @@ img {
   width: auto;
   max-width: 75px;
 }
+
 .navigation {
   display: flex;
   align-content: center;

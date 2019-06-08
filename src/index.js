@@ -22,7 +22,7 @@ const routing = (
           <Link to="/news">News</Link>
         </li>
         <li>
-          <Link  to="/"><img className="logo"  src="assets/artt_logo.png"></img></Link>
+          <Link  to="/"><img className="logo"  src="assets/artt_logo2.png"></img></Link>
         </li>
         <li>
           <Link to="/treasures">Treasures</Link>

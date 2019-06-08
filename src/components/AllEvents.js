@@ -1,16 +1,16 @@
 import React from 'react'
 import Event from './Event'
 import EventForm from './EventForm'
-import { Modal, Button} from 'react-materialize';
+import { Modal, Button } from 'react-materialize';
 
 let baseURL = process.env.REACT_APP_BASEURL
 
 //alternate baseURL = 'https://fathomless-sierra-68956.herokuapp.com'
 
 if (process.env.NODE_ENV === 'development') {
-  baseURL = 'http://localhost:3000'
+    baseURL = 'http://localhost:3000'
 } else {
-  baseURL = 'https://artt-app-api-final.herokuapp.com'
+    baseURL = 'https://artt-app-api-final.herokuapp.com'
 }
 
 console.log('current base URL:', baseURL)
@@ -24,14 +24,14 @@ class AllEvents extends React.Component {
         this.handleAddEvent = this.handleAddEvent.bind(this)
         this.deleteEvent = this.deleteEvent.bind(this)
         this.getFutures = this.getFutures.bind(this)
-       
+
 
     }
     componentDidMount() {
         this.getFutures()
     }
     deleteEvent(id) {
-        fetch( baseURL + '/futures/' + id, {
+        fetch(baseURL + '/futures/' + id, {
             method: 'DELETE'
         })
             .then(response => {
@@ -43,13 +43,13 @@ class AllEvents extends React.Component {
             })
     }
     getFutures() {
-        fetch(  baseURL + '/futures')
+        fetch(baseURL + '/futures')
             .then(response => response.json())
             .then(json => {
                 console.log(json)
                 this.setState({ futures: json })
             })
-            // .catch(error => console.error(error))
+        // .catch(error => console.error(error))
 
     }
     handleAddEvent(event) {
@@ -63,29 +63,35 @@ class AllEvents extends React.Component {
     render() {
         return (
             <div className="container">
-            <div className="row">
-            <Modal header="Modal Header" bottomSheet trigger={<Button
-  floating
-  large
-  className="button"
-  waves="light"
-  icon="add"
-/>}>
-            <EventForm handleAddEvent={this.handleAddEvent} />
-</Modal>
+                <div className="row">
                 
-                {this.state.futures.map((future) =>
-                    <div>
-                        <Event deleteEvent={this.deleteEvent} future={future} key={future.title} />
-                        
-                        {/* <span onClick={() => this.deleteEvent(future.id)}>X</span> */}
-                        
-                        
+                    
+                    <Modal header="Add a new Event" bottomSheet trigger={<Button
+                        floating
+                        className="waves-effect waves-light btn-floating right button"
+                        waves="light"
+                        icon="add"
+                    />}>
+                       
+                        <EventForm handleAddEvent={this.handleAddEvent} />
+                       
+                    </Modal>
+                    
+                </div>
+                <h4 className="titles">Events</h4>
+                <div className="row">
 
-                    </div>
-                )}
+                    {this.state.futures.map((future) =>
+                        <div>
+                            <Event deleteEvent={this.deleteEvent} future={future} key={future.title} />
 
-</div>
+
+
+
+                        </div>
+                    )}
+
+                </div>
             </div>
         )
     }

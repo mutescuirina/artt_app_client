@@ -5,12 +5,13 @@ import  '../App.css';
 
 class Event extends React.Component {
     render() {
-        return (
+        return ( <div>
             <Col m={4} s={12}>
-                <div>
-
-                    <Card classname="event-card"header={<CardTitle />}
+               
+                    
+                    <Card classname="event-card" header={<CardTitle />}
                      title={this.props.future.title}
+                     
                          reveal={
                          <div>
                          <h3>{this.props.future.date}</h3>
@@ -19,11 +20,12 @@ class Event extends React.Component {
                         }
                          > 
                              <div className="card-content">
+                                 <div className="card-image">
                              <img src={this.props.future.img}/>
-                            <span onClick={() => this.props.deleteEvent(this.props.future.id)}>X</span>
-                            
-
-                            
+                             </div>
+                             <a class="btn-floating btn-small waves-effect waves-light grey"
+                             onClick={() => this.props.deleteEvent(this.props.future.id)}><i class="material-icons">delete</i></a>
+                             
                              </div>
                              
                         {/* <p>{this.props.future.title}</p>
@@ -32,8 +34,9 @@ class Event extends React.Component {
                         <p>{this.props.future.comment}</p>
                         <p>{this.props.future.date}</p> */}
                     </Card>
-                </div>
+                
             </Col>
+            </div>
 
 
         );

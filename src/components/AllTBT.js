@@ -20,6 +20,9 @@ class AllTBT extends React.Component {
         this.state = {
             pasts: []
         }
+        this.handleAddTBT = this.handleAddTBT.bind(this)
+        this.deleteTBT = this.deleteTBT.bind(this)
+        this.getPasts = this.getPasts.bind(this)
     }
     componentDidMount() {
         this.getPasts()
@@ -29,6 +32,27 @@ class AllTBT extends React.Component {
         .then(response => response.json())
         .then(json => this.setState({pasts: json}))
         .catch(error => console.error(error))
+    }
+    deleteTBT(id) {
+        fetch( baseURL + '/futures/' + id, {
+            method: 'DELETE'
+        })
+            .then(response => {
+                const findIndex = this.state.pasts.findIndex(event => event.id === id)
+                const copyTBT = [... this.state.pasts]
+                copyTBT.splice(findIndex, 1)
+                this.setState({ pasts: copyTBT })
+
+            })
+
+    }
+    handleAddTBT(event) {
+        const copyTBT = [...this.state.pasts]
+        copyTBT.unshift(event)
+        this.setState({
+            pasts: copyTBT
+        })
+
     }
     render() {
         return (

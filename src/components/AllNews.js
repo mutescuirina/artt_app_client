@@ -18,11 +18,11 @@ class AllNews extends React.Component {
         super(props)
         this.state = {
             presents: [],
-            currentPresent: null
+            activeNews: {}
         }
         this.handleAddNews = this.handleAddNews.bind(this)
         this.deleteNews = this.deleteNews.bind(this)
-        this.setCurrent = this.setCurrent.bind(this)
+        this.setActiveNews = this.setActiveNews.bind(this)
     }
     componentDidMount() {
         this.getPresents()
@@ -47,10 +47,11 @@ class AllNews extends React.Component {
             })
             .catch(error => console.error(error))
     }
-    setCurrent(event) {
+   
+    setActiveNews(event) {
         // console.log("HELP ME")
         this.setState({
-            currentPresent: event.currentTarget.id
+            activeNews: event.currentTarget
         })
         // console.log(event.currentTarget.id)
 
@@ -81,7 +82,7 @@ class AllNews extends React.Component {
 
                 {this.state.presents.map((present) =>
                     <div>
-                        <New present={present} setCurrent={this.setCurrent} key={present.id} currentPresent={this.state.currentPresent} id={present.id} />
+                        <New present={present} setCurrent={this.setCurrent} key={present.id} activeNews={this.state.activeNews} id={present.id} />
                         <p onClick={() => this.deleteNews(present.id)}>X</p>
                         
                         

@@ -13,7 +13,7 @@ class TBT extends Component {
                          reveal={this.props.past.description}> 
                              <div className="card-content">
                              <img src={this.props.past.img}/>
-                            <span onClick={() => this.props.deleteEvent(this.props.past.id)}>X</span>
+                            <span onClick={() => this.props.deleteTBT(this.props.past.id)}>X</span>
                             
                              </div>
                              
