@@ -66,7 +66,7 @@ class AllEvents extends React.Component {
                 <div className="row">
                 
                     
-                    <Modal header="Add a new Event" bottomSheet trigger={<Button
+                    <Modal header="Add an event" bottomSheet trigger={<Button
                         floating
                         className="waves-effect waves-light btn-floating right button"
                         waves="light"

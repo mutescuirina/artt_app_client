@@ -10,8 +10,11 @@ import AllNews from './components/AllNews'
 import AllTreasures from './components/AllTreasure'
 import AllTBT from './components/AllTBT'
 import { Navbar } from 'react-materialize';
+
+
 const routing = (
   <Router>
+    
     <div>
     <Navbar className="navigation" brand={<a />}>
       <ul>
@@ -32,14 +35,20 @@ const routing = (
         </li>
       </ul>
       </Navbar>
+      
+      
       <Route path="/events" component={AllEvents} />
       <Route path="/news" component={AllNews} />
       <Route exact path="/" component={App} />
       <Route path="/treasures" component={AllTreasures} />
       <Route path="/TBT" component={AllTBT} />
     </div>
+   
   </Router>
+  
 )
+
+
 ReactDOM.render(routing, document.getElementById('root'))
 
 

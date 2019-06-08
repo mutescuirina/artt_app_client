@@ -32,6 +32,7 @@ body, html {
 }
 .container {
   background: #B36528;
+  /* border:10px solid #B36528; */
 }
 .btn-floating i {
   background:#ffffff;
@@ -40,15 +41,39 @@ body, html {
 }
 .btn-small i{
   background: white;
-  color: #8FD4F3;
+  color: #adb9bd;
 
 }
 
 .card {
-  display: flex;
+  
+  background-color: rgba(255,255,255, .8);
   width: 300px;
   height: 300px;
+  display:flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: center;
 }
+.card-content {
+  height: 100%;
+  /* border: 2px solid green; */
+  display:flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  
+}
+
+.card-img  {
+  height: 50%;
+  /* border: 2px solid purple; */
+}
+
 
 .card-small {
   width: 100px;
@@ -58,19 +83,22 @@ body, html {
 .hide {
   display: none;
 }
-
+.button-box {
+  margin-top: -38px;
+    margin-left: 8px;
+}
 .show {
   display: block;
 }
 
-img {
+/* img {
   height: auto;
   max-height: 200px;
   width: auto;
   max-width: 200px;
   
 
-}
+} */
 .form {
  padding: 50px;
 }
@@ -90,15 +118,28 @@ input[type=text]:not(.browser-default) {
 }
 
 .navigation {
+  position: sticky; 
+  top: 0;
+  z-index: 1;
   display: flex;
   align-content: center;
   justify-content: center;
-  background: none;
+  background: #ffffff;
   padding-top: 20px;
  box-shadow:none; 
 
   
 }
+.materialbox-caption {
+  top:0;
+  border: 2px solid white;
+}
+.treasure-img {
+  width: 200px;
+  height: 200px;
+}
+
+
 .navigation a {
   color: black;
 }

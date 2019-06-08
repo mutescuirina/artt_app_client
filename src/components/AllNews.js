@@ -68,17 +68,16 @@ class AllNews extends React.Component {
     render() {
         return (
             <div className="container">
-                <h1>This is the News Page</h1>
-                <Modal header="Modal Header" bottomSheet trigger={<Button
+                <div className="row">
+                <Modal header="Share the news" bottomSheet trigger={<Button
                     floating
-                    large
-                    className="button"
+                    className="waves-effect waves-light btn-floating right button"
                     waves="light"
                     icon="add"
                 />}>
                     <NewsForm handleAddNews={this.handleAddNews} />
                 </Modal>
-
+                    </div>
 
                 {this.state.presents.map((present) =>
                     <div>

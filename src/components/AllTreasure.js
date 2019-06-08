@@ -1,6 +1,6 @@
 import React from 'react'
 import Treasure from './Treasure'
-import TreasureForm from './NewsFrom'
+import TreasureForm from './TreasureForm'
 import { Modal, Button } from 'react-materialize';
 
 let baseURL = process.env.REACT_APP_BASEURL
@@ -55,23 +55,30 @@ class AllTreasure extends React.Component {
     }
     render() {
         return (
+            
             <div className="container">
                 <div className="row">
-                    <Modal header="Modal Header" bottomSheet trigger={<Button
+                
+                    
+                    <Modal header="Share the past" bottomSheet trigger={<Button
                         floating
-                        large
-                        className="button"
+                        className="waves-effect waves-light btn-floating right button"
                         waves="light"
                         icon="add"
                     />}>
+                       
                         <TreasureForm handleAddTreasure={this.handleAddTreasure} />
+                       
                     </Modal>
+                    
+                </div>
+                <h4 className="titles">Treasures</h4>
+                <div className="row">
 
                     {this.state.pasts.map((past) =>
                         <div>
                             <Treasure deleteTreasure={this.deleteTreasure} past={past} key={past.title} />
 
-                            {/* <span onClick={() => this.deleteEvent(future.id)}>X</span> */}
 
 
 
