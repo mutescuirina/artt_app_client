@@ -56,30 +56,39 @@ class AllTBT extends React.Component {
     }
     render() {
         return (
-            <div className="container">
-            <div className="row">
-            <Modal header="Modal Header" bottomSheet trigger={<Button
-  floating
-  large
-  className="button"
-  waves="light"
-  icon="add"
-/>}>
-            <TBTForm handleAddTBT={this.handleAddTBT} />
-</Modal>
+            <div>
+            <div className="divider"></div>
+            <div className="container" id="tbt-container">
+                <div className="row">
                 
-                {this.state.pasts.map((past) =>
-                    <div>
-                        <TBT deleteTBT={this.deleteTBT} past={past} key={past.title} />
-                        
-                        {/* <span onClick={() => this.deleteEvent(future.id)}>X</span> */}
-                        
-                        
+                    
+                    <Modal header="Share the past" bottomSheet trigger={<Button
+                        floating
+                        className="waves-effect waves-light btn-floating right button"
+                        waves="light"
+                        icon="add"
+                    />}>
+                       
+                        <TBTForm handleAddTBT={this.handleAddTBT} />
+                       
+                    </Modal>
+                    
+                </div>
+                <h4 className="titles">TBT</h4>
+                <div className="row">
 
-                    </div>
-                )}
+                    {this.state.pasts.map((past) =>
+                        <div>
+                            <TBT deleteTBT={this.deleteTBT} past={past} key={past.title} />
 
-</div>
+
+
+
+                        </div>
+                    )}
+
+                </div>
+            </div>
             </div>
         )
     }

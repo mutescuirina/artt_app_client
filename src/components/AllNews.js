@@ -22,7 +22,7 @@ class AllNews extends React.Component {
         }
         this.handleAddNews = this.handleAddNews.bind(this)
         this.deleteNews = this.deleteNews.bind(this)
-        this.setActiveNews = this.setActiveNews.bind(this)
+
     }
     componentDidMount() {
         this.getPresents()
@@ -48,14 +48,7 @@ class AllNews extends React.Component {
             .catch(error => console.error(error))
     }
    
-    setActiveNews(event) {
-        // console.log("HELP ME")
-        this.setState({
-            activeNews: event.currentTarget
-        })
-        // console.log(event.currentTarget.id)
-
-    }
+    
     handleAddNews(news) {
         const copyNews = [...this.state.presents]
         copyNews.unshift(news)
@@ -67,29 +60,39 @@ class AllNews extends React.Component {
 
     render() {
         return (
-            <div className="container">
+            <div>
+                <div className="divider"></div>
+           
+            <div className="container" id="news-container">
                 <div className="row">
-                <Modal header="Share the news" bottomSheet trigger={<Button
-                    floating
-                    className="waves-effect waves-light btn-floating right button"
-                    waves="light"
-                    icon="add"
-                />}>
-                    <NewsForm handleAddNews={this.handleAddNews} />
-                </Modal>
-                    </div>
+                    <Modal header="Share the news" bottomSheet trigger={<Button
+                        floating
+                        className="waves-effect waves-light btn-floating right button"
+                        waves="light"
+                        icon="add"
+                    />}>
+                       
+                        <NewsForm handleAddNews={this.handleAddNews} />
+                       
+                    </Modal>
+                    
+                </div>
+                <h4 className="titles">News</h4>
+                <div className="row">
 
-                {this.state.presents.map((present) =>
-                    <div>
-                        <New present={present} setCurrent={this.setCurrent} key={present.id} activeNews={this.state.activeNews} id={present.id} />
-                        <p onClick={() => this.deleteNews(present.id)}>X</p>
-                        
-                        
-                    </div>
-                )}
+                    {this.state.presents.map((present) =>
+                        <div>
+                            <New deleteNews={this.deleteNews} present={present} key={present.title} />
 
+
+
+
+                        </div>
+                    )}
+
+                </div>
             </div>
-
+            </div>
         )
     }
 }

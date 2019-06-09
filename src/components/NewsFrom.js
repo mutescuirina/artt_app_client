@@ -61,17 +61,10 @@ class NewsForm extends React.Component {
             value={this.state.description}
             />
 
-            <label htmlFor="comment">Comment</label>
-            <input
-            type="text"
-            id="comment"
-            onChange={this.handleChange}
-            value={this.state.comment}
-            />
 
             <input 
             type="submit"
-            value="Add an Event"
+            value="Add"
             />
 
 

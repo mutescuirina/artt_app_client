@@ -10,7 +10,7 @@ class Treasure extends Component {
                 
                     
                     <Col m={4} s={12} >
-                        <Card classname="event-card"
+                        <Card id="past-card"  
                             title={this.props.past.title}>
                                 <MediaBox className="treasure-img" caption={this.props.past.description}>
                                 <img className="treasure-img" src={this.props.past.img} />

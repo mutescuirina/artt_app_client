@@ -55,8 +55,10 @@ class AllTreasure extends React.Component {
     }
     render() {
         return (
-            
-            <div className="container">
+
+            <div>
+                <div className="divider"></div>
+            <div className="container" id="events-container">
                 <div className="row">
                 
                     
@@ -86,6 +88,7 @@ class AllTreasure extends React.Component {
                     )}
 
                 </div>
+            </div>
             </div>
         )
     }

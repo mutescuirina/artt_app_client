@@ -1,50 +1,52 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Col, Card} from 'react-materialize';
+import  '../App.css';
 
-class New extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            hide: true,
-           
-        }
-        this.toggleNews = this.toggleNews.bind(this)
-        this.handleClick = this.handleClick.bind(this)
-    }
-    toggleNews () {
-        this.setState({
-            hide: !this.state.hide
-        })
 
-    }
-    handleClick(e){
-        e.preventDefault()
-        this.props.setCurrent(e)
-        this.toggleNews()
-    }
-
-    //check if ids match, only "show" img if they do
-    
+class New extends React.Component {
     render() {
-        console.log(this.props.setActiveNews)
-        // console.log(this.props.setCurrent)
-        return (
-            <div id={this.props.id} onMouseLeave={() => this.setState({hide: true})} onMouseEnter={() => this.setState({hide: false})} className="row">
-                <div className="col m6">
-                    <p>{this.props.present.title}</p>
-                    <p>{this.props.present.date}</p>
-                </div>
-                {
-                    <div className={`col m6 ${this.state.hide ? 'hide' : 'show'}`} >
-                        <img src={this.props.present.img} />
-                        <p>{this.props.present.description}</p>
-                        
-                    </div>
-
-                }
+        return ( <div>
+            <Col m={4} s={12}>
+               
+                    
+                    <Card classname="card" 
+                     title={this.props.present.title}
+                     
+                         reveal={
+                         <div className="card-content">
+                         <h3>{this.props.present.date}</h3>
+                         <p>{this.props.present.description}</p>
+                         </div>
+                        }
+                         > 
+                             
+                            <div className="card-image">
+                             <img className="card-img" src={this.props.present.img}/>
+                             </div>
+                             <div className="button-box">
+                             <a class="btn-floating btn-small waves-effect waves-light grey"
+                             onClick={() => this.props.deleteNews(this.props.present.id)}><i class="material-icons">delete</i></a>
+                             
+                             </div>
+                             
+                             
+                             
+                        {/* <p>{this.props.future.title}</p>
+                        <p>{this.props.future.description}</p>
+                        <img src={this.props.future.img}/>
+                        <p>{this.props.future.comment}</p>
+                        <p>{this.props.future.date}</p> */}
+                    </Card>
+                
+            </Col>
             </div>
 
+
         );
+
     }
+
 }
+
 
 export default New;

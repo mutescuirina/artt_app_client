@@ -62,7 +62,9 @@ class AllEvents extends React.Component {
     }
     render() {
         return (
-            <div className="container">
+            <div>
+                <div className="divider"></div>
+            <div className="container" id="events-container">
                 <div className="row">
                 
                     
@@ -92,6 +94,7 @@ class AllEvents extends React.Component {
                     )}
 
                 </div>
+            </div>
             </div>
         )
     }

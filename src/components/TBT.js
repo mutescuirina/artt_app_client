@@ -1,30 +1,26 @@
-import React, {Component} from 'react';
-import { Col, Card, CardTitle} from 'react-materialize';
-import  '../App.css';
+
+import React, { Component } from 'react';
+import { Col, Card, MediaBox } from 'react-materialize';
+import '../App.css';
 
 class TBT extends Component {
     render() {
         return (
-            <Col m={2} s={12}>
-                <div>
-
-                    <Card classname="card-small"header={<CardTitle />}
-                     title={this.props.past.title}
-                         reveal={this.props.past.description}> 
-                             <div className="card-content">
-                             <img src={this.props.past.img}/>
-                            <span onClick={() => this.props.deleteTBT(this.props.past.id)}>X</span>
-                            
-                             </div>
-                             
-                        {/* <p>{this.props.future.title}</p>
-                        <p>{this.props.future.description}</p>
-                        <img src={this.props.future.img}/>
-                        <p>{this.props.future.comment}</p>
-                        <p>{this.props.future.date}</p> */}
-                    </Card>
-                </div>
-            </Col>
+            <div>
+                
+                    
+                    <Col m={4} s={12} >
+                        <Card id="past-card" 
+                            title={this.props.past.title}>
+                                <MediaBox className="treasure-img" caption={this.props.past.description}>
+                                <img className="treasure-img" src={this.props.past.img} />
+                                </MediaBox>
+                                <a class="btn-floating btn-small waves-effect waves-light grey"
+                             onClick={() => this.props.deleteTBT(this.props.past.id)}><i class="material-icons">delete</i></a>
+                        </Card>
+                    </Col>
+               
+            </div>
 
 
         );
@@ -32,6 +28,5 @@ class TBT extends Component {
     }
 
 }
-
 
 export default TBT;

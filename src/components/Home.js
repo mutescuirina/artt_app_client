@@ -8,6 +8,8 @@ const styles = {
   textAlign: "center"
 };
 const insideStyles = {
+  height: 100,
+  width: 200,
   background: "rgba(255, 255, 255, .6)",
   padding: 20,
   position: "absolute",
@@ -16,35 +18,37 @@ const insideStyles = {
   transform: "translate(-50%,-50%)"
 };
 const image1 =
-  "https://images.pexels.com/photos/166669/pexels-photo-166669.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=2&w=500";
+  "https://images.pexels.com/photos/1645634/pexels-photo-1645634.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500";
 const image2 =
-  "https://images.pexels.com/photos/163572/iron-gate-karparten-danube-gorge-abbey-163572.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500";
+  "https://images.pexels.com/photos/2306277/pexels-photo-2306277.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=2&w=500";
 const image3 =
-  "https://images.pexels.com/photos/166669/pexels-photo-166669.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=2&w=500";
+  "https://images.pexels.com/photos/362/marketing-man-person-communication.jpg?auto=format%2Ccompress&cs=tinysrgb&dpr=2&w=500";
 const image4 =
-  "https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/empire-state-building-black-and-white-square-format-john-farnan.jpg";
+"https://images.pexels.com/photos/166669/pexels-photo-166669.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=2&w=500";
 
 const Home = () => (
+<div>
+    <div className="divider"></div>
     <div className="container">
   <div style={styles}>
    
     <Parallax bgImage={image1} strength={500}>
       <div style={{ height: 500 }}>
-        <div style={insideStyles}>Time together. Learn what's new. Dicover what is past.</div>
+        <div style={insideStyles}>Time together.<br></br> Learn what's new. <br></br>Discover the past.</div>
       </div>
     </Parallax>
    
     <h1>| | |</h1>
    
-    <Parallax bgImage={image3} blur={{ min: -1, max: 3 }}>
+    <Parallax bgImage={image2} blur={{ min: -1, max: 3 }}>
       <div style={{ height: 500 }}>
-        <div style={insideStyles}><h4><Link to="/news">News</Link></h4></div>
+        <div style={insideStyles}><p className="sections"><Link to="/events">Events</Link></p></div>
       </div>
     </Parallax>
     <h1>| | |</h1>
-    <Parallax bgImage={image2} strength={-100}>
+    <Parallax bgImage={image3} strength={-100}>
       <div style={{ height: 500 }}>
-        <div style={insideStyles}>Reverse direction</div>
+      <div style={insideStyles}><p className="sections"><Link to="/news">News</Link></p></div>
       </div>
     </Parallax>
     <h1>| | |</h1>
@@ -69,11 +73,12 @@ const Home = () => (
       )}
     >
       <div style={{ height: 500 }}>
-        <div style={insideStyles}>renderProp</div>
+      <div style={insideStyles}><p className="sections"><Link to="/treasures">Treasures</Link></p></div>
       </div>
     </Parallax>
     <div style={{ height: 500 }} />
    
+  </div>
   </div>
   </div>
 );

@@ -1,11 +1,20 @@
 
 body, html {
   margin:0;
+  background: #B4E3F7;
+
+}
+h1 {
+  color: #B36528;
 }
 
 .App {
   text-align: center;
   
+}
+a {
+  color: black;
+  text-decoration: none;
 }
 #modal-0 {
   /* display: flex; */
@@ -21,8 +30,10 @@ body, html {
     /* bottom: 0px; */
 }
 .titles {
-  color: #ffffff;
-  text-align: center;
+  color: #000000;
+    background: rgba(255,255,255, .5);
+    text-align: center;
+    padding: 14px;
 }
 .row {
   padding: 30px;
@@ -31,12 +42,37 @@ body, html {
   padding:10px;
 }
 .container {
-  background: #B36528;
+  background:rgba(255,255,255, .5);
+  border-top: 7px solid  #B36528;
   /* border:10px solid #B36528; */
+}
+.divider {
+  height: 50px;
+  width: 100%;
+  background: rgba(255,255,255, .5);
+}
+.sections {
+  font-weight: 900;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+}
+
+/* #events-container {
+  background: url('https://images.pexels.com/photos/255377/pexels-photo-255377.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=2&w=500') no-repeat;
+  background-size: cover;
+  background: opacity(.5);
+  
+} */
+#treasures-container {
+  background: url('https://images.pexels.com/photos/924007/pexels-photo-924007.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500');
+  background-size: cover;
+  /* backdrop-filter: opacity(20%); */
+  -webkit-backdrop-filter: opacity(10%)
 }
 .btn-floating i {
   background:#ffffff;
   color: #8FD4F3; 
+  position: sticky;
  
 }
 .btn-small i{
@@ -46,8 +82,9 @@ body, html {
 }
 
 .card {
+  /* border: 2px solid  #8FD4F3; */
+  background-color: rgba(255,255,255, .4);
   
-  background-color: rgba(255,255,255, .8);
   width: 300px;
   height: 300px;
   display:flex;
@@ -67,6 +104,12 @@ body, html {
   align-content: center;
   align-items: center;
   
+}
+#past-card{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-items: center;
 }
 
 .card-img  {
@@ -109,6 +152,9 @@ input[type=text]:not(.browser-default) {
 .button {
   color:#62C4EF;
   /* float: right; */
+  position: fixed;
+  margin-top: 10px;
+  margin-left: 900px;
 }
 .logo {
   height: auto;
@@ -131,8 +177,15 @@ input[type=text]:not(.browser-default) {
   
 }
 .materialbox-caption {
-  top:0;
-  border: 2px solid white;
+  background-color: rgba(255,255,255, .2);
+  /* left: 908px; */
+    /* padding-left: 25px; */
+    bottom: 10px;
+    /* text-align: left; */
+    /* border: 2px solid white; */
+    /* width: 50%; */
+    /* width: 100px; */
+    height: 100px;
 }
 .treasure-img {
   width: 200px;
